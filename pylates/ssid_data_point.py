@@ -1,18 +1,11 @@
 """Class file which describes a network information data point collected."""
 
-import time
-
 from pylates import utils
 
 
 class SSIDDataPoint(object):
-    def __init__(self, measurer_mac_address='', measurer_location=None,
-                 **kwargs):
+    def __init__(self, **kwargs):
         """Initializes a network SSID data point."""
-        self.measurer_mac_address = measurer_mac_address
-        self.measurer_location = measurer_location
-        self.timestamp = kwargs.pop('timestamp', time.time())
-
         self.ssid = kwargs.pop('ssid', '')
         self.network_type = kwargs.pop('network_type', '')
         self.authentication = kwargs.pop('authentication', '')
